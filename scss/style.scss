@@ -78,6 +78,7 @@
     @media (min-width: 768px) {
       height: 643px;
     }
+
     @media (min-width: 992px) {
       height: 676px;
     }
@@ -111,6 +112,7 @@
       height: 643px;
       padding-top: 135px;
     }
+
     @media (min-width: 992px) {
       width: 586px;
       height: 676px;
@@ -125,6 +127,7 @@
         font-size: $tablet-headline;
         line-height: 45px;
       }
+
       @media (min-width: 992px) {
         font-size: $desktop-headline;
       }
@@ -139,6 +142,7 @@
       @media (min-width: 768px) {
         padding: 40px 0 10px;
       }
+
       @media (min-width: 992px) {
         padding: 18px 0;
       }
@@ -147,6 +151,7 @@
         font-size: $normal-mobile;
         position: relative;
         padding-right: 40px;
+        cursor: pointer;
 
         &:after {
           content: '';
@@ -163,6 +168,7 @@
         @media (min-width: 768px) {
           font-size: $title-mobile;
         }
+
         @media (min-width: 992px) {
           font-size: $title-mobile;
         }
@@ -180,6 +186,7 @@
         @media (min-width: 768px) {
           font-size: $mobile-headline;
         }
+
         @media (min-width: 992px) {
           font-size: $mobile-headline;
         }
@@ -197,6 +204,7 @@
         line-height: 31px;
         padding-bottom: 6px;
       }
+
       @media (min-width: 992px) {
         font-size: $mobile-headline;
       }
@@ -213,6 +221,7 @@
         font-size: $normal-desktop;
         letter-spacing: 0.04em;
       }
+
       @media (min-width: 992px) {
         width: 454px;
         font-size: $normal-desktop;
@@ -247,6 +256,7 @@
       font-size: $normal-desktop;
       bottom: 76px;
     }
+
     @media (min-width: 992px) {
       bottom: 137px;
     }
@@ -259,6 +269,7 @@
 
 #advanteges {
   padding: 27px 0;
+
   .advanteges-list {
     @media (min-width: 768px) {
       display: flex;
@@ -266,53 +277,67 @@
       align-items: start;
       padding: 45px 0 55px;
     }
+
     @media (min-width: 992px) {
       padding: 45px 0 76px;
     }
+
     .advanteges-item {
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 18px 0;
+
       @media (min-width: 768px) {
         align-items: start;
         width: 33%;
         padding: 0;
       }
+
       @media (min-width: 992px) {
         width: 30%;
       }
+
       img {
         width: 42px;
         margin-right: 33px;
+
         @media (min-width: 768px) {
           margin-right: 15px;
         }
+
         @media (min-width: 992px) {
           width: 60px;
           margin-right: 20px;
         }
       }
+
       .advanteges-text-block {
         width: 205px;
+
         @media (min-width: 768px) {
           width: 100%;
         }
+
         .advanteges-title {
           font-size: $title-mobile2;
           line-height: 22px;
           padding-bottom: 6px;
-          @media (min-width: 768px){
+
+          @media (min-width: 768px) {
             padding-bottom: 8px;
           }
-          @media (min-width: 992px){
+
+          @media (min-width: 992px) {
             font-size: $mobile-headline;
             padding-bottom: 20px;
           }
         }
+
         .advanteges-text {
           letter-spacing: 0.04em;
-          @media (min-width: 768px){
+
+          @media (min-width: 768px) {
             font-size: $normal-desktop;
           }
         }
@@ -325,3 +350,124 @@
 //********************************************** SECTION PRESENTATION ***********************
 //*******************************************************************************************
 
+#presentation {
+  background-color: $iceberg;
+
+  .presentation {
+
+    .desktop-btn {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      padding-bottom: 33px;
+  
+      .desktop-btn {
+        display: block;
+      }
+    }
+
+
+    .presentation-item {
+      padding: 22px 0 52px;
+
+      .mobile-btn {
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 0 0 0 ;
+        &:nth-child(2n) {
+          display: flex;
+          flex-direction: row-reverse;
+        }
+
+        .mobile-btn {
+          display: none;
+        }
+      }
+    }
+  }
+
+  //*********************************************** Text block ************************
+
+  .presentation-text-block {
+    @media (min-width: 768px) {
+      width: 50%;
+      padding-right: 30px;
+    }
+    .presentation-title {
+      @include headline-font;
+      font-size: $title-mobile2;
+      padding-bottom: 7px;
+    }
+
+    .presentation-list li {
+      list-style: "-";
+      padding: 5px 0 5px 6px;
+    }
+  }
+
+  //********************************* Learn more & Register btn ************************
+
+  .learn-more-btn {
+    @include btn;
+    width: 217px;
+    height: 47px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: $black-pearl;
+    background-color: $iceberg;
+    margin: 26px 0 31px;
+    transition: all .3s linear;
+    @media (min-width: 768px){
+      margin: 25px 0 11px;
+    }
+
+    &:hover {
+      color: $white;
+      background-color: $denim;
+    }
+
+    &:active {
+      @include btn-active;
+    }
+  }
+
+  .regist-btn {
+    @include btn;
+    width: 217px;
+    height: 47px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin: 26px 0 31px;
+    transition: all .3s linear;
+    @media (min-width: 768px){
+      margin: 25px 0 11px;
+    }
+
+    &:hover {
+      @include btn-hover;
+    }
+
+    &:active {
+      @include btn-active;
+    }
+  }
+
+
+  //********************************* PNG, JPEG/GIF/ Youtube link block **********************
+
+  .presentation-content-block {
+    @media (min-width: 768px){
+      width: 50%;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
