@@ -1,0 +1,327 @@
+@import "mixins";
+@import "variables";
+
+.wrapper {
+  max-width: 1232px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    padding: 0 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    padding: 0;
+  }
+}
+
+//*******************************************************************************************
+//********************************************** SECTION SLIDER *****************************
+//*******************************************************************************************
+
+#section-slider {
+  width: 100%;
+  height: 506px;
+
+  @media (min-width: 768px) {
+    height: 643px;
+  }
+
+  @media (min-width: 992px) {
+    height: 676px;
+  }
+
+  //****************************************** Main slider dots style ***********************
+
+  .main-slider-theme {
+    .owl-dots {
+      position: absolute;
+      left: 50%;
+      bottom: 10px;
+      transform: translateX(-50%);
+
+      .owl-dot {
+        display: inline-block;
+        outline: none;
+
+        span {
+          width: 10px;
+          height: 10px;
+          margin: 12px;
+          background: $white;
+          display: block;
+          border: 1px solid $denim;
+          border-radius: 50%;
+          transition: opacity 200ms ease;
+        }
+
+        &.active,
+        &:hover {
+          span {
+            background: $denim;
+          }
+        }
+      }
+    }
+  }
+
+  //****************************************** Slider item`s background ***********************
+
+  .slider-item {
+    position: relative;
+    height: 506px;
+
+    @media (min-width: 768px) {
+      height: 643px;
+    }
+    @media (min-width: 992px) {
+      height: 676px;
+    }
+  }
+
+  .first-slide {
+    background: url("../img/box-1.jpg") no-repeat center / cover;
+    background-position-x: 65%;
+  }
+
+  .second-slide {
+    background: url("../img/box-2.jpg") no-repeat center / cover;
+    background-position-x: 60%;
+  }
+
+  .third-slide {
+    background: url("../img/box-3.jpg") no-repeat center / cover;
+    background-position-x: 60%;
+  }
+
+  //****************************************** Slider item`s content ***************************
+
+  .slider-content {
+    width: 238px;
+    height: 506px;
+    padding-top: 94px;
+    position: relative;
+
+    @media (min-width: 768px) {
+      width: 344px;
+      height: 643px;
+      padding-top: 135px;
+    }
+    @media (min-width: 992px) {
+      width: 586px;
+      height: 676px;
+      padding-top: 195px;
+    }
+
+    .slider-headline {
+      @include headline-font;
+      font-size: $mobile-headline;
+
+      @media (min-width: 768px) {
+        font-size: $tablet-headline;
+        line-height: 45px;
+      }
+      @media (min-width: 992px) {
+        font-size: $desktop-headline;
+      }
+    }
+
+    //****************************************** Slide number ************************************
+    .slide-number {
+      display: flex;
+      align-items: center;
+      padding: 32px 0 15px;
+
+      @media (min-width: 768px) {
+        padding: 40px 0 10px;
+      }
+      @media (min-width: 992px) {
+        padding: 18px 0;
+      }
+
+      span {
+        font-size: $normal-mobile;
+        position: relative;
+        padding-right: 40px;
+
+        &:after {
+          content: '';
+          width: 16px;
+          height: 1px;
+          display: inline-block;
+          background-color: $denim;
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateX(-50%);
+        }
+
+        @media (min-width: 768px) {
+          font-size: $title-mobile;
+        }
+        @media (min-width: 992px) {
+          font-size: $title-mobile;
+        }
+      }
+
+      span:last-child {
+        &:after {
+          display: none;
+        }
+      }
+
+      .active-slider-number {
+        font-size: $title-mobile;
+
+        @media (min-width: 768px) {
+          font-size: $mobile-headline;
+        }
+        @media (min-width: 992px) {
+          font-size: $mobile-headline;
+        }
+      }
+    }
+
+    //****************************************** Slide title ************************************
+    .slider-title {
+      font-size: $title-mobile;
+      line-height: 20px;
+      padding-bottom: 8px;
+
+      @media (min-width: 768px) {
+        font-size: $mobile-headline;
+        line-height: 31px;
+        padding-bottom: 6px;
+      }
+      @media (min-width: 992px) {
+        font-size: $mobile-headline;
+      }
+    }
+
+    //****************************************** Slide text *************************************
+    .slider-text {
+      width: 205px;
+      line-height: 130%;
+      padding-bottom: 37px;
+
+      @media (min-width: 768px) {
+        width: 324px;
+        font-size: $normal-desktop;
+        letter-spacing: 0.04em;
+      }
+      @media (min-width: 992px) {
+        width: 454px;
+        font-size: $normal-desktop;
+      }
+    }
+  }
+
+  //****************************************** Slide btn *************************************
+
+  .slider-btn {
+    @include btn;
+    width: 238px;
+    height: 47px;
+    font-size: $mobile-btn;
+    letter-spacing: 0.04em;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    transition: all .3s linear;
+
+    &:hover {
+      @include btn-hover;
+    }
+
+    &:active {
+      @include btn-active;
+    }
+
+    @media (min-width: 768px) {
+      width: 295px;
+      height: 56px;
+      font-size: $normal-desktop;
+      bottom: 76px;
+    }
+    @media (min-width: 992px) {
+      bottom: 137px;
+    }
+  }
+}
+
+//*******************************************************************************************
+//********************************************** SECTION ADVANTEGES *************************
+//*******************************************************************************************
+
+#advanteges {
+  padding: 27px 0;
+  .advanteges-list {
+    @media (min-width: 768px) {
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      padding: 45px 0 55px;
+    }
+    @media (min-width: 992px) {
+      padding: 45px 0 76px;
+    }
+    .advanteges-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 18px 0;
+      @media (min-width: 768px) {
+        align-items: start;
+        width: 33%;
+        padding: 0;
+      }
+      @media (min-width: 992px) {
+        width: 30%;
+      }
+      img {
+        width: 42px;
+        margin-right: 33px;
+        @media (min-width: 768px) {
+          margin-right: 15px;
+        }
+        @media (min-width: 992px) {
+          width: 60px;
+          margin-right: 20px;
+        }
+      }
+      .advanteges-text-block {
+        width: 205px;
+        @media (min-width: 768px) {
+          width: 100%;
+        }
+        .advanteges-title {
+          font-size: $title-mobile2;
+          line-height: 22px;
+          padding-bottom: 6px;
+          @media (min-width: 768px){
+            padding-bottom: 8px;
+          }
+          @media (min-width: 992px){
+            font-size: $mobile-headline;
+            padding-bottom: 20px;
+          }
+        }
+        .advanteges-text {
+          letter-spacing: 0.04em;
+          @media (min-width: 768px){
+            font-size: $normal-desktop;
+          }
+        }
+      }
+    }
+  }
+}
+
+//*******************************************************************************************
+//********************************************** SECTION PRESENTATION ***********************
+//*******************************************************************************************
+
